@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import Loader from "../components/Loader";
 import Movie from "../components/Movie";
-import { getNowPlaying } from "../api";
+import { getPopular } from "../api";
 
 const Wrapper = styled.div`
 	display: flex;
@@ -14,10 +14,10 @@ const Wrapper = styled.div`
 	gap: 40px;
 `;
 
-export default function NowPlaying() {
+export default function Home() {
 	const { isLoading, data } = useQuery({
-		queryKey: ["nowPlaying"],
-		queryFn: getNowPlaying,
+		queryKey: ["popular"],
+		queryFn: getPopular,
 	});
 	console.log(data?.results);
 
@@ -25,7 +25,7 @@ export default function NowPlaying() {
 		<>
 			<Helmet>
 				<meta charSet="utf-8" />
-				<title>Movies: Now Playing</title>
+				<title>Movies: Popular</title>
 			</Helmet>
 			{isLoading ? (
 				<Loader />

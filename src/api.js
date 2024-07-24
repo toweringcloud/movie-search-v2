@@ -4,12 +4,12 @@ export function getPopular() {
   return fetch(`${BASE_URL}/popular`).then((r) => r.json());
 }
 
-export function getNowPlaying() {
-  return fetch(`${BASE_URL}/now-playing`).then((r) => r.json());
-}
-
 export function getComingSoon() {
   return fetch(`${BASE_URL}/coming-soon`).then((r) => r.json());
+}
+
+export function getNowPlaying() {
+  return fetch(`${BASE_URL}/now-playing`).then((r) => r.json());
 }
 
 export function getMovie(id) {
